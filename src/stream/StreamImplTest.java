@@ -7,19 +7,21 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
+ * Teste unitário para {@link StreamImpl}.
+ *
  * @author finx
  * @created 30/07/2015
  */
 public class StreamImplTest {
 
     @Test
-    public void testGetNext() {
+    public void getNext() {
         Stream s = new StreamImpl("a");
         assertEquals('a', s.getNext());
     }
 
     @Test
-    public void testGetNextVariosChars() {
+    public void getNextVariosChars() {
         Stream s = new StreamImpl("abcde");
         assertEquals('a', s.getNext());
         assertEquals('b', s.getNext());
@@ -29,14 +31,14 @@ public class StreamImplTest {
     }
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
-    public void testErroGetNext() {
+    public void erroGetNext() {
         Stream s = new StreamImpl("a");
         assertEquals('a', s.getNext());
         assertEquals('a', s.getNext());
     }
 
     @Test
-    public void testHasNext() {
+    public void hasNext() {
         Stream s = new StreamImpl("a");
         assertTrue(s.hasNext());
         assertEquals('a', s.getNext());
@@ -44,7 +46,7 @@ public class StreamImplTest {
     }
 
     @Test
-    public void testHasNextVariosChars() {
+    public void hasNextVariosChars() {
         Stream s = new StreamImpl("abcde");
         assertTrue(s.hasNext());
         assertEquals('a', s.getNext());

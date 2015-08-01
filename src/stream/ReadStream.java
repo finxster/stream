@@ -5,11 +5,19 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
+ * Classe que executa a leitura de uma {@link Stream}.
+ *
  * @author finx
  * @created 30/07/2015
  */
 public class ReadStream {
 
+    /**
+     * Retorna o primeiro caractere da {@link Stream} que não se repete.
+     *
+     * @param input o {@link Stream} a ter o primeiro caractere que não se repete encontrado.
+     * @return o primeiro caractere da {@link Stream} que não se repete.
+     */
     public static char firstChar(Stream input) {
         // inclui no conjunto e garante a ordem. o primeiro incluído é o que precisamos.
         Set<Character> chars = new LinkedHashSet<Character>();
@@ -28,7 +36,7 @@ public class ReadStream {
         if (chars.size() > 0) {
             return chars.iterator().next();
         } else {
-            throw new RuntimeException("Não encontrou.");
+            throw new RuntimeException("Não existe um caractere que não se repete na stream: " + input.toString() + " .");
         }
     }
 }

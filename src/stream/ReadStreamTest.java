@@ -6,20 +6,22 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 /**
+ * Teste para {@link ReadStream}.
+ *
  * @author finx
  * @created 30/07/2015
  */
 public class ReadStreamTest {
 
     @Test
-    public void testFirstChar() {
+    public void exemploEnunciado() {
         Stream s = new StreamImpl("aAbBABac");
         Character resultado = ReadStream.firstChar(s);
         assertEquals(new Character('b'), resultado);
     }
 
     @Test
-    public void testFirstChar2() {
+    public void exemploEnunciadoComOutraResposta() {
         Stream s = new StreamImpl("aAbBABacb");
         Character resultado = ReadStream.firstChar(s);
         assertEquals(new Character('c'), resultado);
@@ -33,7 +35,7 @@ public class ReadStreamTest {
     }
 
     @Test
-    public void testSequencia2() {
+    public void sequenciaAleatoria() {
         Stream s = new StreamImpl("abcdefgha");
         Character resultado = ReadStream.firstChar(s);
         assertEquals(new Character('b'), resultado);
